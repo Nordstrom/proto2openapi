@@ -1,0 +1,55 @@
+---
+openapi: "3.0.1"
+paths:
+  /simple.TypesService/DoSomething:
+    post:
+      summary: "Do Something"
+      operationId: "simple.TypesService.DoSomething"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TypesInput"
+          application/protobuf:
+            schema:
+              type: "object"
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TypesOutput"
+            application/protobuf:
+              schema:
+                type: "object"
+components:
+  schemas:
+    TypesInput:
+      type: "object"
+      properties:
+        float_field:
+          type: "number"
+          format: "float"
+        int64_field:
+          type: "string"
+          format: "int64"
+        fixed64_field:
+          type: "string"
+          format: "fixed64"
+        int32_field:
+          type: "number"
+          format: "int32"
+        fixed32_field:
+          type: "number"
+          format: "fixed32"
+        uint32_field:
+          type: "number"
+          format: "uint32"
+        double_field:
+          type: "number"
+          format: "double"
+        uint64_field:
+          type: "string"
+          format: "uint64"
+    TypesOutput:
+      type: "object"

@@ -1,0 +1,46 @@
+---
+openapi: "3.0.1"
+paths:
+  /simple.SimpleService/DoSomething:
+    post:
+      summary: "Do Something"
+      description: "Let's do something"
+      operationId: "simple.SimpleService.DoSomething"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SomeInput"
+          application/protobuf:
+            schema:
+              type: "object"
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SomeOutput"
+            application/protobuf:
+              schema:
+                type: "object"
+components:
+  schemas:
+    SomeInput:
+      type: "object"
+      properties:
+        anotherField:
+          type: "string"
+          format: "string"
+        someField:
+          type: "string"
+          description: "Some field top\nSome field side"
+          format: "string"
+      description: "This is some input"
+    SomeOutput:
+      type: "object"
+      properties:
+        yetAnotherField:
+          type: "string"
+          description: "Yet another field top\nYet another field side"
+          format: "string"
+      description: "This is some output"

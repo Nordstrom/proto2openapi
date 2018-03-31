@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package simple;
+
+// A Simple Service
+service SimpleService {
+    // Let's do something
+    rpc DoSomething (SomeInput) returns (SomeOutput);  // yes do something
+}
+
+// This is some input
+message SomeInput {
+    // Some field top
+    string someField = 1;  // Some field side
+    string anotherField = 2;
+}
+
+// This is some output
+message SomeOutput {
+    // Yet another field top
+    string yetAnotherField = 1;  // Yet another field side
+}

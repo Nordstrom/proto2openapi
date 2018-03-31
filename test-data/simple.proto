@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package simple;
+
+service SimpleService {
+    rpc DoSomething (SomeInput) returns (SomeOutput);
+}
+
+message SomeInput {
+    string someField = 1;
+    string anotherField = 2;
+}
+
+message SomeOutput {
+    string yetAnotherField = 1;
+}
