@@ -1,0 +1,41 @@
+---
+openapi: "3.0.1"
+paths:
+  /simple.SimpleService/DoSomething:
+    post:
+      summary: "Do Something"
+      operationId: "simple.SimpleService.DoSomething"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/simple.SomeInput"
+          application/protobuf:
+            schema:
+              type: "object"
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/simple.SomeOutput"
+            application/protobuf:
+              schema:
+                type: "object"
+components:
+  schemas:
+    simple.SomeInput:
+      type: "object"
+      properties:
+        anotherField:
+          type: "string"
+          format: "string"
+        someField:
+          type: "string"
+          format: "string"
+    simple.SomeOutput:
+      type: "object"
+      properties:
+        yetAnotherField:
+          type: "string"
+          format: "string"

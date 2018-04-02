@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package simple;
+
+service SimpleService {
+  rpc DoSomething (SomeInput) returns (SomeOutput);
+}
+
+enum InputEnum {
+  VAL1 = 0;
+  VAL2 = 1;
+  VAL3 = 2;
+}
+
+message SomeInput {
+  string someField = 1;
+  string anotherField = 2;
+  InputEnum enumField = 3;
+}
+
+message SomeOutput {
+  enum SomeEnum {
+    FOO = 0;
+    BAR = 1;
+  }
+  string yetAnotherField = 1;
+  SomeEnum enumOut = 2;
+}
