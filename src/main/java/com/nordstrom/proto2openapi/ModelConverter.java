@@ -117,21 +117,20 @@ public class ModelConverter {
 
   private OpenAPI convert() {
     val oa = new OpenAPI();
+    val paths = new Paths();
 
-    val paths =
-        protoSchema
-            .protoFiles()
-            .stream()
-            .flatMap(this::rpcToPaths)
-            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    // Loop through each proto file, converting each rpc to a path
+    protoSchema
+        .protoFiles()
+        .stream()
+        .flatMap(this::rpcToPaths)
+        .forEach(entry -> paths.addPathItem(entry.getKey(), entry.getValue()));
 
     // oaSchemas should have been populated while resolving rpc calls above.
     // TODO: validate that we have at least one schema.
     val components = new Components().schemas(oaSchemas);
 
-    val pathsObj = new Paths();
-    pathsObj.putAll(paths);
-    oa.paths(pathsObj);
+    oa.paths(paths);
     oa.components(components);
 
     return oa;
