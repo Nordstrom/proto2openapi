@@ -9,7 +9,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TypesInput"
+              $ref: "#/components/schemas/simple.TypesInput"
           application/protobuf:
             schema:
               type: "object"
@@ -18,13 +18,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/TypesOutput"
+                $ref: "#/components/schemas/simple.TypesOutput"
             application/protobuf:
               schema:
                 type: "object"
 components:
   schemas:
-    TypesInput:
+    simple.TypesInput:
       type: "object"
       properties:
         float_field:
@@ -51,5 +51,5 @@ components:
         uint64_field:
           type: "string"
           format: "uint64"
-    TypesOutput:
+    simple.TypesOutput:
       type: "object"

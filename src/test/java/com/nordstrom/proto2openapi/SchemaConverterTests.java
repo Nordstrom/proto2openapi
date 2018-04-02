@@ -27,21 +27,26 @@ class SchemaConverterTests {
 
   @Test
   void testSimple() throws IOException, URISyntaxException {
-    generateAndCompare("simple");
+    convertAndCompare("simple");
   }
 
   @Test
   void testDescriptions() throws IOException, URISyntaxException {
-    generateAndCompare("descriptions");
+    convertAndCompare("descriptions");
   }
 
   @Test
   void testTypes() throws IOException, URISyntaxException {
-    generateAndCompare("types");
+    convertAndCompare("types");
   }
 
-  void generateAndCompare(String filePrefix) throws IOException, URISyntaxException {
-    converter.addSource("test-data").addProto(filePrefix + ".proto").generate(output);
+  @Test
+  void testEnums() throws IOException, URISyntaxException {
+    convertAndCompare("enums");
+  }
+
+  void convertAndCompare(String filePrefix) throws IOException, URISyntaxException {
+    converter.addSource("test-data").addProto(filePrefix + ".proto").convert(output);
     assertEquals(loadFileString("test-data/" + filePrefix + ".yml"), output.toString());
   }
 

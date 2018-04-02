@@ -10,7 +10,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/SomeInput"
+              $ref: "#/components/schemas/simple.SomeInput"
           application/protobuf:
             schema:
               type: "object"
@@ -19,13 +19,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SomeOutput"
+                $ref: "#/components/schemas/simple.SomeOutput"
             application/protobuf:
               schema:
                 type: "object"
 components:
   schemas:
-    SomeInput:
+    simple.SomeInput:
       type: "object"
       properties:
         anotherField:
@@ -36,7 +36,7 @@ components:
           description: "Some field top\nSome field side"
           format: "string"
       description: "This is some input"
-    SomeOutput:
+    simple.SomeOutput:
       type: "object"
       properties:
         yetAnotherField:

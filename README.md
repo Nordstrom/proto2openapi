@@ -20,7 +20,7 @@ class Example {
     converter
       .addSource("proto-directory")
       .addProto("my-proto.proto")
-      .generate(output);
+      .convert(output);
   }
 }
 ```
@@ -37,7 +37,7 @@ class Example {
     OpenAPI model = converter
       .addSource("proto-directory")
       .addProto("my-proto.proto")
-      .generateModel();
+      .convertModel();
   }
 }
 ```
