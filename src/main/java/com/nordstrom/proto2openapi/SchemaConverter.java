@@ -39,7 +39,7 @@ public class SchemaConverter {
   private final SchemaLoader loader = new SchemaLoader();
 
   private final ObjectMapper mapper = createMapper();
-  private FileSystem fs;
+  private final FileSystem fs;
 
   public SchemaConverter() {
     this(FileSystems.getDefault());
