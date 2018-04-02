@@ -19,7 +19,7 @@
 
   "files":
   [
-    {"includePattern": "build/libs/(.*\.jar)", "uploadPattern": "com/nordstrom/xrpc/xrpc/VERSION_NUMBER/$1"},
+    {"includePattern": "build/libs/(.*\.jar)", "uploadPattern": "com/nordstrom/proto2openapi/VERSION_NUMBER/$1"},
     {"includePattern": "build/publications/proto2openapiMaven/pom-default.xml", "uploadPattern": "com/nordstrom/proto2openapi/VERSION_NUMBER/proto2openapi-VERSION_NUMBER.pom"}
   ],
   "publish": true
