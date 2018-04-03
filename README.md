@@ -1,4 +1,5 @@
 # Protobuf 3 to Open API 3 Converter
+[![Build Status][ci-image]][ci-link] [ ![Download][artifact-image]][artifact-download]
 
 This converts proto3 files to Open API 3 schemas.
 
@@ -41,3 +42,8 @@ class Example {
   }
 }
 ```
+
+[ci-image]:https://travis-ci.org/Nordstrom/proto2openapi.svg?branch=master
+[ci-link]:https://travis-ci.org/Nordstrom/proto2openapi
+[artifact-image]:https://api.bintray.com/packages/nordstromoss/oss_maven/proto2openapi/images/download.svg
+[artifact-download]:https://bintray.com/nordstromoss/oss_maven/proto2openapi/_latestVersion
